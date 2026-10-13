@@ -1,6 +1,7 @@
-import { getPost } from "../api/PostApi.jsx";
+import { deletePost, getPost, postData } from "../api/PostApi.jsx";
 import { useEffect, useState } from "react";
 import "../App.css";
+import { Form } from "./Form.jsx";
 
 export const Posts = () => {
 
@@ -17,13 +18,27 @@ export const Posts = () => {
   }, []);
 
   //function to delete the post 
-  const handleDeletePost =(id) => {
-    
-  }
+  const handleDeletePost = async (id) => {
+    try {
+      const res = await deletePost(id);
+      if (res.status === 200) {
+        const newUpdatedPosts = data.filter((curPost)=> {
+          return curPost.id !== id;
+        });
+        setData(newUpdatedPosts);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-  return <section className= "section-post">
-    <ol
-    >
+  return (
+    <>
+    <section className="section-form">
+      <Form data={data} setData={setData} />
+    </section>
+  <section className= "section-post">
+    <ol>
         {
             data.map((curElem) => {
                const {id, body, title } = curElem;
@@ -38,4 +53,6 @@ export const Posts = () => {
     </ol>
 
   </section>
+  </>
+  );
 };
