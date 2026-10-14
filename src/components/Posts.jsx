@@ -6,7 +6,7 @@ import { Form } from "./Form.jsx";
 export const Posts = () => {
 
     const [data, setData] = useState([]);
-
+    const [buttonText, setButtonText] = useState(true);
     const getPostData = async() => {
     const res = await getPost();
     setData(res.data);
