@@ -4,8 +4,6 @@ import { StudentCard } from './components/StudentCard';
 import { ProductCard } from './components/ProductCard';
 
 export const App = () => {
-
-
   return (
     <main className="home-page">
       <section className="home-content" aria-labelledby="home-title">
