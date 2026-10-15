@@ -1,30 +1,19 @@
 import { useState } from 'react';
-import {useNavigate} from 'react-router-dom';
+import {NavLink, useNavigate} from 'react-router-dom';
 import './App.css';
+import { Greeting } from './components/Greeting';
+import { StudentCard } from './components/StudentCard';
+import { ProductCard } from './components/ProductCard';
 
 export const App = () => {
 
-  const navigate = useNavigate(); 
-  const [selectedComponent, setSelectedComponent] = useState('');
-
-  //create array of obejectswith name and path of each components
-   const components = [
-    {
-      name: "Greeting",
-      path: "/greeting",
-      props: { Name: "Hello, Alok! Gud Abend" },
-    },
-    {
-      name: "ProductCard",
-      path: "/productcard",
-      props: { product: "Laptop", price: 500 },
-    },
-    {
-      name: "StudentCard",
-      path: "/studentcard",
-      props: { Name: "Alok", age: "40", Marks: "80%" },
-    },
+   const products = [
+    { id: 1, name: "Laptop", price: 800, category: "Electronics" },
+    { id: 2, name: "Mobile", price: 500, category: "Electronics" },
+    { id: 3, name: "Headphones", price: 100, category: "Accessories" },
   ];
+
+  const navigate = useNavigate(); 
 
   return (
     <main className="home-page">
@@ -32,28 +21,23 @@ export const App = () => {
         <h1 id="home-title">Your home page</h1>
         <p className="home-description">Choose a component to view.</p>
 
-        <div className="component-buttons" aria-label="Components">
-          {components.map((component) => (
-            <button
-              className="component-button"
-              type="button"
-              key={component}
-              aria-pressed={selectedComponent === component}
-              onClick={() => 
-                navigate(component.path,{
-                state:component.props,
-              }) }
-            >
-              {component.name}
-            </button>
-          ))}
+        {/* <div className="component-buttons" aria-label="Components">
+          <NavLink to='/greeting'>Greeting</NavLink>
+          <NavLink to='/productcard'>ProductCard</NavLink>
+          <NavLink to='/studentcard'>StudentCard</NavLink>
+        </div> */}
+        <Greeting name='Hello Alok!'/>
+        <div className='products-grid'>
+          {products.map ((product) => (
+            <ProductCard key={product.id}
+            product={product.name}
+            price={product.price}
+            category={product.category} 
+            />
+          ))};
         </div>
-
-        {selectedComponent && (
-          <p className="selection-status" role="status">
-            {selectedComponent} selected
-          </p>
-        )}
+        <StudentCard name="Alok" age="43" marks="89%" />
+        
       </section>
     </main>
   );

@@ -1,10 +1,10 @@
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import { PiStudentFill } from "react-icons/pi";
 import "./Cards.css";
 
-export const StudentCard = () => {
-    const {state} = useLocation ();
-    const {Name, age, Marks} = state || {};
+export const StudentCard =  ({ name, age, marks }) => {
+   //  const {state} = useLocation ();
+   //  const {Name, age, Marks} = state || {};
     
  return (
       <main className="demo-page student-page">
@@ -15,17 +15,17 @@ export const StudentCard = () => {
                </span>
                <div>
                   <p className="demo-eyebrow">Student profile</p>
-                  <h1>{Name || "Student"}</h1>
+                  <p>Name: <span className="username"> {name}</span></p>
                </div>
             </div>
             <dl className="student-details">
                <div>
                   <dt>Age</dt>
-                  <dd>{age || "Not provided"}</dd>
+                  <dd>{age}</dd>
                </div>
                <div>
                   <dt>Marks</dt>
-                  <dd>{Marks || "Not provided"}</dd>
+                  <dd>{marks}</dd>
                </div>
             </dl>
          </article>

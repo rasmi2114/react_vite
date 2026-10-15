@@ -1,10 +1,10 @@
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import { ImUsers } from "react-icons/im";
 import "./Cards.css";
 
-export const Greeting = () => {
-    const {state} = useLocation();
-    const {Name} = state || {};
+export const Greeting = ({name}) => {
+    // const {state} = useLocation();
+    // const {Name} = state || {};
 
   return (
     <main className="demo-page greeting-page">
@@ -14,7 +14,7 @@ export const Greeting = () => {
         </span>
         <p className="demo-eyebrow">A warm welcome</p>
         <h1>User Greeting</h1>
-        <p className="greeting-message">{Name || "Hello, welcome!"}</p>
+        <p className="greeting-message">{name}</p>
       </article>
     </main>
   );

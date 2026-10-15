@@ -11,15 +11,15 @@ const router = createBrowserRouter ([
    },
    {
     path: "/greeting",
-    element: <Greeting/>
+    element: <Greeting name="Hello Alok!" />
    },
    {
     path: "/productcard",
-    element: <ProductCard/>
+    element: <ProductCard product="laptop" price="$50" />
    },
    {
     path: "/studentcard",
-    element: <StudentCard />
+    element: <StudentCard name="Alok" age="43" Marks="89%" />
    }
 ]);
 export default router;
