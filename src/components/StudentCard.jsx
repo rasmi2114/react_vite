@@ -2,7 +2,7 @@
 import { PiStudentFill } from "react-icons/pi";
 import "./Cards.css";
 
-export const StudentCard =  ({ name, age, marks }) => {
+export const StudentCard = ({name, age, marks}) => {
    //  const {state} = useLocation ();
    //  const {Name, age, Marks} = state || {};
     
@@ -15,7 +15,7 @@ export const StudentCard =  ({ name, age, marks }) => {
                </span>
                <div>
                   <p className="demo-eyebrow">Student profile</p>
-                  <p>Name: <span className="username"> {name}</span></p>
+                  <h1>{name}</h1>
                </div>
             </div>
             <dl className="student-details">

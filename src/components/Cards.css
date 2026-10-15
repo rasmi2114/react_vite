@@ -1,8 +1,10 @@
 .demo-page {
-  display: grid;
+  display: flex;
+  flex-direction: row;
   min-height: 100vh;
+  gap: 1rem;
   place-items: center;
-  padding: 32px 20px;
+  padding: 32px 10px;
   background: linear-gradient(145deg, #eef3ef, #f7f3e9);
   color: #183b3a;
 }
@@ -67,7 +69,7 @@
   line-height: 1.5;
 }
 
-.products-grid {
+.products-grid, .student-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
@@ -117,7 +119,7 @@
   padding: 32px;
 }
 
-.product-price, .product-items {
+.product-price {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -156,10 +158,7 @@
   color: #397568;
   font-size: 34px;
 }
-.username{
-  font-size: 24px;
-   margin-left: 12px;
-}
+
 .student-details {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

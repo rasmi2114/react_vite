@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import {NavLink, useNavigate} from 'react-router-dom';
 import './App.css';
 import { Greeting } from './components/Greeting';
 import { StudentCard } from './components/StudentCard';
@@ -7,13 +5,6 @@ import { ProductCard } from './components/ProductCard';
 
 export const App = () => {
 
-   const products = [
-    { id: 1, name: "Laptop", price: 800, category: "Electronics" },
-    { id: 2, name: "Mobile", price: 500, category: "Electronics" },
-    { id: 3, name: "Headphones", price: 100, category: "Accessories" },
-  ];
-
-  const navigate = useNavigate(); 
 
   return (
     <main className="home-page">
@@ -27,16 +18,20 @@ export const App = () => {
           <NavLink to='/studentcard'>StudentCard</NavLink>
         </div> */}
         <Greeting name='Hello Alok!'/>
-        <div className='products-grid'>
-          {products.map ((product) => (
-            <ProductCard key={product.id}
-            product={product.name}
-            price={product.price}
-            category={product.category} 
-            />
-          ))};
-        </div>
+
+         {/* StudentCard multiple data */}
+        <section className="student-grid" aria-label="Products">
         <StudentCard name="Alok" age="43" marks="89%" />
+        <StudentCard name="Rashmi" age="39" marks="99%" />
+        <StudentCard name="Soni" age="43" marks="98%" />
+        </section>
+
+        {/* productcard multiple data */}
+        <section className="products-grid" aria-label="Products">
+        <ProductCard product="Laptop" price={80000} category="Electronics" />
+        <ProductCard product="Mobile" price={5000} category="Electronics" />
+        <ProductCard product="Headphones" price={1000} category="Accessories" />
+        </section>
         
       </section>
     </main>
