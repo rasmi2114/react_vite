@@ -6,6 +6,7 @@ import "./Cards.css";
 export const ProductCard = ({product, price, category }) => {
 
     return (
+        <>
         <main className="demo-page product-page">
             <article className="demo-card product-card">
                 <div className="product-image-wrap">
@@ -24,5 +25,6 @@ export const ProductCard = ({product, price, category }) => {
                 </div>
             </article><br></br>         
         </main>
+         </>
     );
 };
