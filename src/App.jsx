@@ -27,8 +27,8 @@ export const App = () => {
         {/* productcard multiple data */}
         <section className="products-grid" aria-label="Products">
         <ProductCard product="Laptop" price={80000} category="Electronics" />
-        <ProductCard product="Mobile" price={5000} category="Electronics" />
-        <ProductCard product="Headphones" price={1000} category="Accessories" />
+        {/* <ProductCard product="Mobile" price={5000} category="Electronics" />
+        <ProductCard product="Headphones" price={1000} category="Accessories" /> */}
         </section>
         
       </section>
