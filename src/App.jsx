@@ -10,12 +10,12 @@ export const App = () => {
         <h1 id="home-title">Your home page</h1>
         <p className="home-description">Choose a component to view.</p>
 
-        <div className="component-buttons" aria-label="Components">
+        {/* <div className="component-buttons" aria-label="Components">
           <NavLink to='/greeting'>Greeting</NavLink>
           <NavLink to='/productcard'>ProductCard</NavLink>
           <NavLink to='/studentcard'>StudentCard</NavLink>
-        </div>
-
+        </div> */}
+        
         <Greeting name='Hello Alok!'/>
 
          {/* StudentCard multiple data */}
